@@ -514,7 +514,7 @@ body {
   }
 
   .stage {
-    width: min(82vw, 54dvh, 360px);
+    width: min(76vw, 49dvh, 332px);
     align-self: center;
   }
 
@@ -543,7 +543,7 @@ body {
     top: auto;
     right: max(14px, env(safe-area-inset-right));
     bottom: calc(env(safe-area-inset-bottom) + 104px);
-    width: clamp(62px, 18vw, 82px);
+    width: clamp(78px, 22vw, 104px);
     transform: none;
   }
 
@@ -600,7 +600,7 @@ body {
   }
 
   .stage {
-    width: min(78vw, 48dvh, 330px);
+    width: min(72vw, 44dvh, 304px);
   }
 
   .throw-button {
@@ -611,6 +611,6 @@ body {
 
   .emoji-object {
     bottom: calc(env(safe-area-inset-bottom) + 82px);
-    width: clamp(52px, 16vw, 70px);
+    width: clamp(68px, 20vw, 88px);
   }
 }
