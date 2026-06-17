@@ -601,6 +601,81 @@ const levels = [
   },
 ];
 
+function colorFromHex(name, hex) {
+  return { name, hex, sample: hexToRgb(hex) };
+}
+
+function makeLevel(emoji, colors, wheelColors) {
+  return {
+    emoji,
+    colors: colors.map(([name, hex]) => colorFromHex(name, hex)),
+    wheelColors: wheelColors.map(([name, hex]) => ({ name, hex })),
+  };
+}
+
+levels.push(
+  makeLevel("🍭", [["Candy Pink", "#f472b6"], ["Candy Red", "#ef4444"], ["Candy White", "#fff7ed"], ["Stick Tan", "#d6a25e"]], [["Mint Swirl", "#5eead4"], ["Grape", "#8b5cf6"], ["Lemon", "#fde047"], ["Blue Pop", "#38bdf8"]]),
+  makeLevel("🐧", [["Penguin Black", "#18181b"], ["Belly White", "#f8fafc"], ["Beak Orange", "#f97316"], ["Flipper Gray", "#64748b"]], [["Ice Blue", "#bae6fd"], ["Arctic Navy", "#1e3a8a"], ["Snow", "#e0f2fe"], ["Fish Silver", "#cbd5e1"]]),
+  makeLevel("🚁", [["Helicopter Red", "#ef4444"], ["Window Blue", "#38bdf8"], ["Rotor Gray", "#94a3b8"], ["Skid Black", "#1f2937"]], [["Sky", "#60a5fa"], ["Signal Yellow", "#facc15"], ["Landing Green", "#22c55e"], ["Cloud", "#f8fafc"]]),
+  makeLevel("🥑", [["Avocado Green", "#65a30d"], ["Avocado Flesh", "#bef264"], ["Pit Brown", "#92400e"], ["Rind Dark", "#365314"]], [["Toast Tan", "#d6a25e"], ["Lime", "#84cc16"], ["Plate Blue", "#60a5fa"], ["Pepper", "#18181b"]]),
+  makeLevel("🎡", [["Wheel Red", "#ef4444"], ["Wheel Yellow", "#facc15"], ["Wheel Blue", "#3b82f6"], ["Wheel Green", "#22c55e"]], [["Sky Cyan", "#67e8f9"], ["Night Purple", "#7c3aed"], ["Cabin Pink", "#f472b6"], ["Frame Gray", "#94a3b8"]]),
+  makeLevel("🦀", [["Crab Red", "#dc2626"], ["Claw Orange", "#f97316"], ["Shell Coral", "#fb7185"], ["Eye Black", "#18181b"]], [["Ocean", "#0ea5e9"], ["Sand", "#fde68a"], ["Seaweed", "#16a34a"], ["Bubble", "#67e8f9"]]),
+  makeLevel("🍋", [["Lemon Yellow", "#facc15"], ["Lemon Light", "#fef08a"], ["Leaf Green", "#16a34a"]], [["Citrus Green", "#84cc16"], ["Peel Orange", "#fb923c"], ["Sky Blue", "#38bdf8"], ["White Plate", "#f8fafc"], ["Slate", "#64748b"]]),
+  makeLevel("🧩", [["Puzzle Blue", "#2563eb"], ["Puzzle Green", "#16a34a"], ["Puzzle Yellow", "#facc15"], ["Puzzle Red", "#ef4444"]], [["Puzzle Purple", "#8b5cf6"], ["Table Tan", "#d6a25e"], ["Shadow", "#475569"], ["Cream", "#fff7ed"]]),
+  makeLevel("🐯", [["Tiger Orange", "#f97316"], ["Tiger Black", "#18181b"], ["Muzzle Cream", "#fed7aa"], ["Nose Pink", "#fb7185"]], [["Jungle Green", "#16a34a"], ["Sun Gold", "#facc15"], ["Sky Blue", "#38bdf8"], ["Leaf Dark", "#166534"]]),
+  makeLevel("⛵", [["Sail White", "#f8fafc"], ["Boat Brown", "#92400e"], ["Flag Red", "#ef4444"], ["Water Blue", "#0ea5e9"]], [["Sky Cyan", "#67e8f9"], ["Sun Yellow", "#fde047"], ["Rope Tan", "#d6a25e"], ["Deep Sea", "#1d4ed8"]]),
+  makeLevel("🍣", [["Rice White", "#f8fafc"], ["Salmon Orange", "#fb923c"], ["Seaweed Black", "#18181b"], ["Tuna Red", "#dc2626"]], [["Wasabi", "#84cc16"], ["Ginger Pink", "#f9a8d4"], ["Soy Brown", "#7c2d12"], ["Plate Blue", "#60a5fa"]]),
+  makeLevel("🐌", [["Shell Brown", "#92400e"], ["Snail Tan", "#d6a25e"], ["Body Beige", "#fde68a"], ["Eye Black", "#18181b"]], [["Leaf Green", "#22c55e"], ["Garden Pink", "#f472b6"], ["Dirt", "#57534e"], ["Rain Blue", "#38bdf8"]]),
+  makeLevel("🎨", [["Paint Red", "#ef4444"], ["Paint Blue", "#2563eb"], ["Paint Yellow", "#facc15"], ["Palette Brown", "#b45309"], ["Paint Green", "#16a34a"]], [["Brush Tan", "#d6a25e"], ["Canvas Cream", "#fff7ed"], ["Violet", "#8b5cf6"]]),
+  makeLevel("🦜", [["Parrot Green", "#16a34a"], ["Wing Blue", "#2563eb"], ["Beak Yellow", "#facc15"], ["Chest Red", "#ef4444"]], [["Tropical Teal", "#14b8a6"], ["Palm Dark", "#166534"], ["Sky", "#38bdf8"], ["Flower Pink", "#f472b6"]]),
+  makeLevel("🥐", [["Croissant Gold", "#d97706"], ["Croissant Light", "#fbbf24"], ["Toasty Brown", "#92400e"]], [["Bakery Cream", "#fff7ed"], ["Jam Red", "#dc2626"], ["Plate Blue", "#60a5fa"], ["Mint", "#2dd4bf"], ["Cocoa", "#7c2d12"]]),
+  makeLevel("🐼", [["Panda Black", "#18181b"], ["Panda White", "#f8fafc"], ["Bamboo Green", "#16a34a"], ["Ear Gray", "#64748b"]], [["Leaf Lime", "#84cc16"], ["Sky Blue", "#38bdf8"], ["Blossom Pink", "#f9a8d4"], ["Stone", "#94a3b8"]]),
+  makeLevel("🧋", [["Tea Brown", "#92400e"], ["Cup Cream", "#fff7ed"], ["Straw Pink", "#f472b6"], ["Pearl Black", "#18181b"]], [["Milk Tan", "#d6a25e"], ["Mint", "#5eead4"], ["Berry", "#ef4444"], ["Lid Blue", "#60a5fa"]]),
+  makeLevel("🎪", [["Tent Red", "#ef4444"], ["Tent White", "#f8fafc"], ["Flag Yellow", "#facc15"], ["Stripe Blue", "#2563eb"]], [["Circus Pink", "#f472b6"], ["Grass Green", "#16a34a"], ["Night Purple", "#7c3aed"], ["Wood Brown", "#92400e"]]),
+  makeLevel("🍇", [["Grape Purple", "#7c3aed"], ["Grape Dark", "#581c87"], ["Leaf Green", "#16a34a"], ["Stem Brown", "#92400e"]], [["Vine Green", "#65a30d"], ["Basket Tan", "#d6a25e"], ["Sky Blue", "#38bdf8"], ["Blush Pink", "#f9a8d4"]]),
+  makeLevel("🛹", [["Board Red", "#ef4444"], ["Deck Blue", "#2563eb"], ["Wheel Black", "#18181b"], ["Axle Gray", "#94a3b8"]], [["Ramp Tan", "#d6a25e"], ["Sticker Yellow", "#facc15"], ["Park Green", "#16a34a"], ["Graffiti Purple", "#8b5cf6"]]),
+  makeLevel("🐙", [["Octopus Purple", "#8b5cf6"], ["Octopus Pink", "#f472b6"], ["Eye Black", "#18181b"], ["Sucker Light", "#fbcfe8"]], [["Ocean Blue", "#0ea5e9"], ["Coral", "#fb7185"], ["Seaweed", "#16a34a"], ["Bubble", "#67e8f9"]]),
+  makeLevel("🍪", [["Cookie Brown", "#b45309"], ["Chocolate Chip", "#431407"], ["Cookie Gold", "#d97706"], ["Crumb Cream", "#fde68a"]], [["Milk White", "#f8fafc"], ["Plate Blue", "#60a5fa"], ["Napkin Pink", "#f9a8d4"], ["Mint", "#2dd4bf"]]),
+  makeLevel("🦕", [["Dino Blue", "#2563eb"], ["Dino Teal", "#14b8a6"], ["Belly Cream", "#fef3c7"], ["Spike Purple", "#7c3aed"]], [["Jungle Green", "#16a34a"], ["Rock Gray", "#64748b"], ["Sun Gold", "#facc15"], ["Lava Red", "#ef4444"]]),
+  makeLevel("🎯", [["Target Red", "#dc2626"], ["Target White", "#f8fafc"], ["Target Blue", "#2563eb"], ["Bullseye", "#facc15"]], [["Arrow Black", "#18181b"], ["Board Tan", "#d6a25e"], ["Game Green", "#22c55e"], ["Prize Pink", "#f472b6"]]),
+  makeLevel("🐸", [["Frog Green", "#16a34a"], ["Belly Lime", "#bef264"], ["Eye Yellow", "#facc15"], ["Mouth Red", "#dc2626"]], [["Pond Blue", "#0ea5e9"], ["Lily Pink", "#f9a8d4"], ["Reed Brown", "#92400e"], ["Mud", "#57534e"]]),
+  makeLevel("🥕", [["Carrot Orange", "#f97316"], ["Carrot Green", "#16a34a"], ["Carrot Light", "#fdba74"]], [["Garden Brown", "#92400e"], ["Leaf Lime", "#84cc16"], ["Sky", "#38bdf8"], ["Basket", "#d6a25e"], ["Radish Pink", "#f472b6"]]),
+  makeLevel("🗽", [["Statue Green", "#5eead4"], ["Patina Teal", "#0f766e"], ["Torch Gold", "#facc15"], ["Flame Orange", "#f97316"]], [["Harbor Blue", "#0ea5e9"], ["Stone Gray", "#94a3b8"], ["Sky", "#60a5fa"], ["Night Navy", "#1e3a8a"]]),
+  makeLevel("🧃", [["Juice Box Red", "#ef4444"], ["Juice Orange", "#f97316"], ["Straw White", "#f8fafc"], ["Box Blue", "#2563eb"]], [["Apple Green", "#22c55e"], ["Lemon Yellow", "#facc15"], ["Berry Pink", "#f472b6"], ["Carton Gray", "#94a3b8"]]),
+  makeLevel("🐳", [["Whale Blue", "#2563eb"], ["Whale Light", "#93c5fd"], ["Belly White", "#f8fafc"], ["Eye Black", "#18181b"]], [["Ocean", "#0ea5e9"], ["Bubble", "#67e8f9"], ["Coral", "#fb7185"], ["Sea Green", "#16a34a"]]),
+  makeLevel("🎲", [["Dice White", "#f8fafc"], ["Pip Black", "#18181b"], ["Dice Red", "#ef4444"], ["Shadow Gray", "#94a3b8"]], [["Game Blue", "#2563eb"], ["Table Green", "#16a34a"], ["Prize Gold", "#facc15"], ["Lucky Purple", "#8b5cf6"]]),
+  makeLevel("🍊", [["Orange Peel", "#f97316"], ["Orange Light", "#fdba74"], ["Leaf Green", "#16a34a"]], [["Citrus Yellow", "#facc15"], ["Juice Pink", "#fb7185"], ["Plate White", "#f8fafc"], ["Sky Blue", "#38bdf8"], ["Stem Brown", "#92400e"]]),
+  makeLevel("🦄", [["Unicorn White", "#f8fafc"], ["Mane Pink", "#f472b6"], ["Horn Gold", "#facc15"], ["Mane Purple", "#8b5cf6"], ["Mane Blue", "#38bdf8"]], [["Magic Teal", "#14b8a6"], ["Cloud", "#e0f2fe"], ["Star Yellow", "#fde047"]]),
+  makeLevel("🎠", [["Carousel Red", "#ef4444"], ["Horse White", "#f8fafc"], ["Pole Gold", "#facc15"], ["Saddle Blue", "#2563eb"]], [["Fair Pink", "#f472b6"], ["Canopy Purple", "#8b5cf6"], ["Grass", "#16a34a"], ["Wood", "#92400e"]]),
+  makeLevel("🥞", [["Pancake Gold", "#d97706"], ["Butter Yellow", "#facc15"], ["Syrup Brown", "#7c2d12"], ["Cream Light", "#fef3c7"]], [["Plate Blue", "#60a5fa"], ["Berry Red", "#dc2626"], ["Mint", "#22c55e"], ["Napkin Pink", "#f9a8d4"]]),
+  makeLevel("🐨", [["Koala Gray", "#94a3b8"], ["Ear Dark", "#475569"], ["Nose Black", "#18181b"], ["Belly White", "#f8fafc"]], [["Eucalyptus", "#16a34a"], ["Leaf Light", "#84cc16"], ["Sky", "#38bdf8"], ["Tree Brown", "#92400e"]]),
+  makeLevel("🌮", [["Taco Shell", "#d97706"], ["Lettuce Green", "#16a34a"], ["Tomato Red", "#ef4444"], ["Cheese Yellow", "#facc15"], ["Meat Brown", "#7c2d12"]], [["Plate Blue", "#60a5fa"], ["Salsa Pink", "#fb7185"], ["Lime", "#84cc16"]]),
+  makeLevel("🪁", [["Kite Red", "#ef4444"], ["Kite Blue", "#2563eb"], ["Kite Yellow", "#facc15"], ["String Gray", "#94a3b8"]], [["Sky", "#38bdf8"], ["Cloud", "#f8fafc"], ["Grass", "#16a34a"], ["Tail Purple", "#8b5cf6"]]),
+  makeLevel("🐞", [["Ladybug Red", "#dc2626"], ["Spot Black", "#18181b"], ["Wing Red", "#ef4444"], ["Leaf Green", "#16a34a"]], [["Garden Pink", "#f472b6"], ["Sun Yellow", "#facc15"], ["Sky Blue", "#38bdf8"], ["Stem", "#65a30d"]]),
+  makeLevel("🍫", [["Chocolate Brown", "#7c2d12"], ["Chocolate Dark", "#431407"], ["Wrapper Gold", "#facc15"], ["Wrapper Red", "#ef4444"]], [["Cream", "#fff7ed"], ["Mint", "#2dd4bf"], ["Berry Pink", "#f472b6"], ["Foil Silver", "#cbd5e1"]]),
+  makeLevel("🚂", [["Train Red", "#dc2626"], ["Train Black", "#18181b"], ["Wheel Gray", "#64748b"], ["Steam White", "#f8fafc"]], [["Track Brown", "#92400e"], ["Signal Green", "#16a34a"], ["Sky", "#38bdf8"], ["Lamp Gold", "#facc15"]]),
+  makeLevel("🌽", [["Corn Yellow", "#facc15"], ["Corn Husk", "#65a30d"], ["Leaf Green", "#16a34a"], ["Kernel Gold", "#f59e0b"]], [["Farm Brown", "#92400e"], ["Sky", "#38bdf8"], ["Butter", "#fef08a"], ["Barn Red", "#dc2626"]]),
+  makeLevel("🦩", [["Flamingo Pink", "#f472b6"], ["Wing Coral", "#fb7185"], ["Beak Black", "#18181b"], ["Leg Pink", "#f9a8d4"]], [["Lagoon", "#0ea5e9"], ["Palm", "#16a34a"], ["Sun Gold", "#facc15"], ["Sand", "#fde68a"]]),
+  makeLevel("🎮", [["Controller Gray", "#64748b"], ["Button Red", "#ef4444"], ["Button Blue", "#2563eb"], ["Button Green", "#16a34a"]], [["Button Yellow", "#facc15"], ["Screen Purple", "#8b5cf6"], ["Cable Black", "#18181b"], ["Neon Pink", "#f472b6"]]),
+  makeLevel("🍎", [["Apple Red", "#dc2626"], ["Apple Shine", "#fecdd3"], ["Leaf Green", "#16a34a"], ["Stem Brown", "#92400e"]], [["Basket Tan", "#d6a25e"], ["Sky", "#38bdf8"], ["Orchard Green", "#65a30d"], ["Gold", "#facc15"]]),
+  makeLevel("🐡", [["Puffer Yellow", "#facc15"], ["Spike Orange", "#f97316"], ["Belly Cream", "#fef3c7"], ["Eye Black", "#18181b"]], [["Ocean", "#0ea5e9"], ["Coral", "#fb7185"], ["Seaweed", "#16a34a"], ["Bubble", "#67e8f9"]]),
+  makeLevel("🎢", [["Coaster Red", "#ef4444"], ["Track Gray", "#64748b"], ["Cart Blue", "#2563eb"], ["Cart Yellow", "#facc15"]], [["Park Green", "#16a34a"], ["Sky", "#38bdf8"], ["Night Purple", "#8b5cf6"], ["Wood", "#92400e"]]),
+  makeLevel("🍌", [["Banana Yellow", "#facc15"], ["Banana Light", "#fef08a"], ["Tip Brown", "#92400e"]], [["Leaf Green", "#16a34a"], ["Sky Blue", "#38bdf8"], ["Smoothie Pink", "#f472b6"], ["Cream", "#fff7ed"], ["Peel Orange", "#fb923c"]]),
+  makeLevel("🐮", [["Cow White", "#f8fafc"], ["Cow Black", "#18181b"], ["Muzzle Pink", "#f9a8d4"], ["Horn Tan", "#d6a25e"]], [["Pasture Green", "#16a34a"], ["Bell Gold", "#facc15"], ["Barn Red", "#dc2626"], ["Sky Blue", "#38bdf8"]]),
+  makeLevel("🌯", [["Tortilla Tan", "#d6a25e"], ["Rice White", "#f8fafc"], ["Bean Brown", "#7c2d12"], ["Lettuce", "#16a34a"], ["Tomato", "#ef4444"]], [["Foil Silver", "#cbd5e1"], ["Cheese", "#facc15"], ["Plate Blue", "#60a5fa"]]),
+  makeLevel("🐬", [["Dolphin Blue", "#2563eb"], ["Dolphin Light", "#93c5fd"], ["Belly White", "#f8fafc"], ["Eye Black", "#18181b"]], [["Ocean", "#0ea5e9"], ["Wave Cyan", "#67e8f9"], ["Sun", "#facc15"], ["Coral", "#fb7185"]]),
+  makeLevel("🛼", [["Skate Pink", "#f472b6"], ["Wheel Purple", "#8b5cf6"], ["Boot White", "#f8fafc"], ["Stopper Red", "#ef4444"]], [["Rink Blue", "#60a5fa"], ["Lace Gray", "#94a3b8"], ["Neon Green", "#22c55e"], ["Star Gold", "#facc15"]]),
+  makeLevel("🥥", [["Coconut Brown", "#7c2d12"], ["Coconut White", "#f8fafc"], ["Shell Dark", "#431407"]], [["Palm Green", "#16a34a"], ["Sand", "#fde68a"], ["Ocean", "#0ea5e9"], ["Sun", "#facc15"], ["Flower Pink", "#f472b6"]]),
+  makeLevel("🦉", [["Owl Brown", "#92400e"], ["Owl Tan", "#d6a25e"], ["Eye Gold", "#facc15"], ["Beak Orange", "#f97316"]], [["Night Blue", "#1e3a8a"], ["Branch", "#7c2d12"], ["Leaf", "#16a34a"], ["Moon", "#f8fafc"]]),
+  makeLevel("🍹", [["Drink Orange", "#f97316"], ["Glass Blue", "#67e8f9"], ["Umbrella Pink", "#f472b6"], ["Cherry Red", "#dc2626"], ["Straw Green", "#16a34a"]], [["Ice White", "#f8fafc"], ["Lemon", "#facc15"], ["Tropical Teal", "#14b8a6"]]),
+  makeLevel("🗿", [["Stone Gray", "#64748b"], ["Stone Dark", "#374151"], ["Stone Light", "#9ca3af"]], [["Island Green", "#16a34a"], ["Ocean", "#0ea5e9"], ["Sunset", "#fb7185"], ["Sand", "#fde68a"], ["Volcano", "#7c2d12"]]),
+  makeLevel("🍬", [["Candy Pink", "#f472b6"], ["Wrapper Blue", "#60a5fa"], ["Wrapper Yellow", "#facc15"], ["Candy White", "#f8fafc"]], [["Mint", "#2dd4bf"], ["Grape", "#8b5cf6"], ["Cherry", "#ef4444"], ["Orange", "#f97316"]]),
+  makeLevel("🐷", [["Pig Pink", "#f9a8d4"], ["Snout Pink", "#fb7185"], ["Nostril Dark", "#831843"], ["Ear Light", "#fbcfe8"]], [["Mud Brown", "#92400e"], ["Farm Green", "#16a34a"], ["Sky", "#38bdf8"], ["Corn Gold", "#facc15"]]),
+  makeLevel("🥝", [["Kiwi Green", "#65a30d"], ["Kiwi Light", "#bef264"], ["Seed Black", "#18181b"], ["Rind Brown", "#92400e"]], [["Fruit Yellow", "#facc15"], ["Plate White", "#f8fafc"], ["Berry Pink", "#f472b6"], ["Juice Orange", "#f97316"]]),
+  makeLevel("🦁", [["Lion Gold", "#d97706"], ["Mane Brown", "#92400e"], ["Muzzle Cream", "#fed7aa"], ["Nose Black", "#18181b"]], [["Savanna", "#facc15"], ["Grass", "#16a34a"], ["Sky", "#38bdf8"], ["Sunset Red", "#ef4444"]]),
+  makeLevel("📚", [["Book Red", "#dc2626"], ["Book Blue", "#2563eb"], ["Book Green", "#16a34a"], ["Page Cream", "#fef3c7"]], [["Bookmark Gold", "#facc15"], ["Ink Black", "#1f2937"], ["Library Brown", "#92400e"], ["Study Purple", "#8b5cf6"]])
+);
+
 const wheel = document.querySelector("#wheel");
 const wheelButton = document.querySelector("#wheelButton");
 const throwButton = document.querySelector("#throwButton");
