@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Dart Color Wheel</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <button id="levelsButton" class="levels-button corner-button corner-left" type="button">Levels</button>
+    <button id="nextButton" class="next-button corner-button corner-right" type="button">Next</button>
+    <canvas id="emojiCanvas" class="emoji-object" width="512" height="512" aria-label="Emoji object to color" role="img"></canvas>
+    <main class="game-shell">
+      <section class="scoreboard" aria-live="polite">
+        <p id="levelLabel" class="label">Level 1</p>
+        <h1 id="result">Ready</h1>
+      </section>
+
+      <section class="stage" aria-label="Spinning color wheel dart game">
+        <button id="wheelButton" class="wheel-button" type="button" aria-label="Throw dart at spinning color wheel">
+          <span id="wheel" class="wheel" aria-hidden="true"></span>
+          <span class="wheel-center" aria-hidden="true"></span>
+          <span id="spark" class="spark" aria-hidden="true"></span>
+        </button>
+        <div id="dart" class="dart" aria-hidden="true">
+          <span class="dart-tip"></span>
+          <span class="dart-body"></span>
+          <span class="dart-tail"></span>
+        </div>
+      </section>
+
+      <div class="controls">
+        <button id="throwButton" class="throw-button" type="button">Hit space to throw</button>
+      </div>
+    </main>
+
+    <button id="completeButton" class="complete-button" type="button" hidden>Done! 🎉</button>
+
+    <section id="levelScreen" class="level-screen" aria-label="Choose a level">
+      <div class="level-panel">
+        <p class="label">Choose a level</p>
+        <h2>Color Quest</h2>
+        <div id="levelGrid" class="level-grid"></div>
+      </div>
+    </section>
+
+    <section id="introPopup" class="intro-popup" aria-label="How to play" hidden>
+      <div class="intro-card">
+        <button id="introCloseButton" class="intro-close-button" type="button" aria-label="Close">×</button>
+        <p>Fill in the color of the emoji by throwing darts</p>
+      </div>
+    </section>
+
+    <script src="script.js"></script>
+  </body>
+</html>
